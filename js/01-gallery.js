@@ -38,18 +38,21 @@ function onParentGalleryClick(e) {
 function createModal(image) {
 
   const modalImg = basicLightbox.create(`
-    <img src="${image}" class="image-original">
+    <img src="${image}">
 `);
+  
   modalImg.show();
-
+  window.addEventListener('keydown', onEscClose);
 }
 
-  document.addEventListener('keypress', function (e) {
-    if(e.keyCode === 27) document.querySelector('.image-original').hidden= 1;
-  }); 
+////////////////////// Close modal by esc //////////////////////
 
-// <script>
-  //document.addEventListener('keypress', function (e) {
-    //if(e.keyCode === 27) document.getElementById('modal_id').hidden= 1;
-  //}); 
-//</script> 
+function onEscClose(e) {
+   const imgEl = document.querySelector('.basicLightbox--visible');
+  if (e.code === 'Escape') {
+    imgEl.remove();
+    window.removeEventListener('keydown', onEscClose);
+
+  }
+}
+
