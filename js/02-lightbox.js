@@ -14,6 +14,6 @@ const gallery = createGalleryItems(galleryItems);
 galleryRef.innerHTML = gallery;
 
 
-let galleryLightbox = new SimpleLightbox('.gallery a', {captionsData: 'alt', captionDelay: 250,});
-galleryLightbox.on('show.simplelightbox');
+let gallerySimplebox = new SimpleLightbox('.gallery a', {captionsData: 'alt', captionDelay: 250,});
+gallerySimplebox.on('show.simplelightbox');
 

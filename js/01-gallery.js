@@ -33,6 +33,7 @@ function onParentGalleryClick(e) {
   
 }
 
+
 //////////Create modal////////////////
 
 function createModal(image) {
